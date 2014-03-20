@@ -1,0 +1,16 @@
+<body>
+<h1>Search</h1>
+
+<%= form_tag(do_search_items_path, method: "get") do %>
+  <%= select_tag(:operand, options_for_select(@and_or)) %></br></br>
+  <%= label_tag(:title, "Title:") %></br>
+  <%= text_field_tag(:title) %></br>
+  <%= label_tag(:description, "Description:") %></br>
+  <%= text_field_tag(:description) %></br>
+  <%= label_tag(:owner, "Owner:") %></br>
+  <%= text_field_tag(:owner) %></br>
+  <%= label_tag(:t, "Type:") %></br>
+  <%= select(:t, :t_id, @type_drop_down)%>
+  <%= submit_tag("Search", :class => "btn btn-primary")%>
+<% end %>
+</body>
